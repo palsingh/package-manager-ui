@@ -1,7 +1,9 @@
 {
   "name": "package-manager-ui",
   "displayName": "Package Manager UI",
-  "description": "",
+  "description": "UI to manage your node modules using NPM or YARN",
+  "publisher": "jaspal singh",
+  "repository": "https://github.com/palsingh/package-manager-ui",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.78.0"
@@ -12,6 +14,31 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "dependency-manager",
+          "title": "Dependency Manager",
+          "icon": "media/package-manager-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "dependency-manager": [
+        {
+          "id": "add-packages",
+          "name": "Add Packages"
+        },
+        {
+          "id": "remove-packages",
+          "name": "Remove Packages"
+        },
+        {
+          "id": "conflict-packages",
+          "name": "Package Issues"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "package-manager-ui.helloWorld",
